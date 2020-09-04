@@ -15,10 +15,11 @@ services:
     restart: always
     volumes:
       - ../app:/usr/local/src/work
+      - /tmp/postgresql-data:/var/lib/postgresql/data:z
     ports:
       - 5000:5000
     tty: true
     depends_on:
       - db
-    working_dir: /usr/local/src/work
+    working_dir: /usr/local/src/work # cdと同等
     command: python app.py
