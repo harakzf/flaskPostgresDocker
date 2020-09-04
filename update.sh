@@ -1,7 +1,9 @@
 declare commitWord=$1
 declare date=`date '+%T'`
-declare GIT_COMMIT_LOG=./${date}_gitCommit.log
-declare GIT_PUSH_LOG=./${date}_gitPush.log
+
+mkdir ${date}_log
+
+declare GIT_COMMIT_LOG=./${date}_log/gitCommit.log
 
 # ステージ追加
 git add --all . 
