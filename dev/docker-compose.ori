@@ -20,5 +20,4 @@ services:
     tty: true
     depends_on:
       - db
-    command: python app.py
     # command追加して自動起動されるように（Dockerfileでも可）
