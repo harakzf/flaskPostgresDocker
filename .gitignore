@@ -1,1 +1,2 @@
-gitcommitlog/*
+gitCommitLog/*
+*.sh
