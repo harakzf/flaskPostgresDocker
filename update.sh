@@ -7,9 +7,8 @@ declare GIT_PUSH_LOG=./${date}_gitPush.log
 git add --all . 
 
 # コミット
-git commit -m '${commitWord}' > $GIT_COMMIT_LOG
+git commit -m "${commitWord}" > $GIT_COMMIT_LOG
 
 # プッシュ
-git push origin master > $GIT_PUSH_LOG
+git push origin master
 
-echo '完了'
