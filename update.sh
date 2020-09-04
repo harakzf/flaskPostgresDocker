@@ -1,5 +1,5 @@
 declare commitWord=$1
-declare time=`date '+%T'`
+declare time=`date '+%H%M%S'`
 
 # ステージ追加
 git add --all . 
