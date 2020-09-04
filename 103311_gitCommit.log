@@ -1,0 +1,5 @@
+[master 3dbeb51] ${commitWord}
+ 3 files changed, 16 insertions(+)
+ create mode 100644 "10\357\200\27233\357\200\27211_gitAdd.log"
+ create mode 100644 gitInit.sh
+ create mode 100644 update.sh
