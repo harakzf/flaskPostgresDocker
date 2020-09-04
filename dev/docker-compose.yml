@@ -1,0 +1,23 @@
+version: '3.2'
+services:
+  db:
+    image: postgres:latest
+    container_name: flask_db
+    restart: always
+    environment:
+      POSTGRES_USER: 'dev' # DBのユーザー名（＝DB名）
+      POSTGRES_PASSWORD: 'pass' # DBのパスワード
+    volumes:
+      - ..\init_db:/docker-entrypoint-initdb.d    
+  flask:
+    build: .
+    container_name: flask_dev
+    restart: always
+    volumes:
+      - ..\app:/usr/local/src/work
+    ports:
+      - 5000:5000
+    tty: true
+    depends_on:
+      - db
+    # command追加して自動起動されるように（Dockerfileでも可）
