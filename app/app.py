@@ -28,7 +28,6 @@ def insertInput(con, value):
     with con.cursor() as cur:
         cur.execute("INSERT INTO INPUTS (value, input_date) VALUES (%s,current_date)", (value, ))
 
-
 ## flaskルーティングメソッド
 @app.route("/")
 def index():
@@ -48,6 +47,7 @@ def hello_post():
         insertInput(con, inputValue)
         return render_template("hello.html", title = "Hello(post)ページ", input1 = "入力値＝[" + inputValue + "]", inputs = getInputs(con))
 
+## ajax(POST非同期送信)対応メソッド
 @app.route("/api/hello/post", methods=["POST"])
 def hello_post_ajax():
     name = request.json["name"]
@@ -59,4 +59,3 @@ def hello_post_ajax():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
-    
